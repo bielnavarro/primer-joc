@@ -1,0 +1,2 @@
+# primer-joc
+primer joc
