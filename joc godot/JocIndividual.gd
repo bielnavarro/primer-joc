@@ -1,6 +1,3 @@
-extends KinematicBody2D
-
-var velocitat_base = 500
 var velocitat = Vector2.ZERO
 var gravetat = Vector2.DOWN * 980
 var salt = Vector2.UP * 500
@@ -34,4 +31,3 @@ func anima(velocitat: Vector2):
 		
 		if abs(velocitat.x) < 0.1:
 			animacio.play('quiet')
-		

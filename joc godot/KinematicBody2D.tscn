@@ -3,16 +3,16 @@
 [ext_resource path="res://0dce5bb330261e0c1c64fd5f5c79aced_c5_720x720.jpeg" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 71, 49 )
+extents = Vector2( 33, 30.5 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 491, 149 )
-scale = Vector2( 0.267426, 0.185409 )
+position = Vector2( 211, 138 )
+scale = Vector2( 0.128137, 0.115009 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2( 492, 149 )
+position = Vector2( 212, 137 )
 shape = SubResource( 1 )
