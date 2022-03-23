@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://joc godot/Terra.tscn" type="PackedScene" id=1]
 [ext_resource path="res://joc godot/KinematicBody2D.tscn" type="PackedScene" id=2]
@@ -7,16 +7,42 @@
 [ext_resource path="res://joc godot/Terra 3.tscn" type="PackedScene" id=5]
 [ext_resource path="res://joc godot/Terra 4.tscn" type="PackedScene" id=6]
 
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 121.25, 10 )
+
 [node name="Node2D" type="Node2D"]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 50, 11 )
+position = Vector2( -182, 60 )
 script = ExtResource( 4 )
 
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+position = Vector2( 197, 141 )
+current = true
+
 [node name="Terra 1" parent="." instance=ExtResource( 1 )]
+position = Vector2( -67, -126 )
+scale = Vector2( 0.5, 1 )
 
 [node name="Terra2" parent="." instance=ExtResource( 3 )]
+material = SubResource( 1 )
+position = Vector2( 193, 101 )
+scale = Vector2( 0.351, 1 )
 
 [node name="Terra 3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 397, 51 )
+scale = Vector2( 0.3, 1 )
 
 [node name="Terra 4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 839, 116 )
+scale = Vector2( 0.1, 1 )
+
+[node name="Final" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Final"]
+position = Vector2( 1051, 249 )
+shape = SubResource( 2 )
+
+[connection signal="area_entered" from="Final" to="KinematicBody2D" method="_on_Final_area_entered"]

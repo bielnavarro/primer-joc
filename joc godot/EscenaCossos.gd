@@ -28,10 +28,9 @@ func anima(velocitat: Vector2):
 			animacio.flip_h = true 
 			animacio.play('camina')
 		
-		if velocitat.y < -0.1:
+		if velocitat.y < -1:
 			animacio.play('salta')
-			return
 		
-		if abs(velocitat.x) < 0.1:
+		if abs(velocitat.x) < 0.5:
 			animacio.play('quiet')
 		

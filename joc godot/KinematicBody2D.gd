@@ -18,3 +18,24 @@ func _physics_process(delta):
 	
 	velocitat += gravetat * delta
 	velocitat = move_and_slide(velocitat, Vector2.UP)
+
+func anima(velocitat: Vector2):
+		var animacio : AnimatedSprite = $AnimatedSprite
+		if velocitat.x > 0:
+			animacio.flip_h = false
+			animacio.play('camina')
+		elif velocitat.x < 0 :
+			animacio.flip_h = true 
+			animacio.play('camina')
+		
+		if velocitat.y < -1:
+			animacio.play('salta')
+		
+		if abs(velocitat.x) < 0.5:
+			animacio.play('quiet')
+
+	
+
+
+func _on_Final_area_entered(area):
+	pass
