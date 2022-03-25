@@ -10,7 +10,7 @@
 [sub_resource type="CanvasItemMaterial" id=1]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 121.25, 10 )
+extents = Vector2( 30.5, 6.5 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,7 +23,7 @@ position = Vector2( 197, 141 )
 current = true
 
 [node name="Terra 1" parent="." instance=ExtResource( 1 )]
-position = Vector2( -67, -126 )
+position = Vector2( -80, -126 )
 scale = Vector2( 0.5, 1 )
 
 [node name="Terra2" parent="." instance=ExtResource( 3 )]
@@ -42,7 +42,8 @@ scale = Vector2( 0.1, 1 )
 [node name="Final" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Final"]
-position = Vector2( 1051, 249 )
+visible = false
+position = Vector2( 929.5, 215.5 )
 shape = SubResource( 2 )
 
-[connection signal="area_entered" from="Final" to="KinematicBody2D" method="_on_Final_area_entered"]
+[connection signal="body_entered" from="Final" to="KinematicBody2D" method="_on_Final_body_entered"]

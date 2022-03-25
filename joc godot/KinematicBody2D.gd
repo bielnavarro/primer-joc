@@ -15,7 +15,8 @@ func _physics_process(delta):
 		velocitat += Vector2.LEFT* velocitat_base
 	if Input.is_action_just_pressed("mou amunt") and is_on_floor():
 		velocitat += salt
-	
+	if Input.is_action_just_pressed("mou avall"):
+		velocitat += Vector2.DOWN * velocitat_base
 	velocitat += gravetat * delta
 	velocitat = move_and_slide(velocitat, Vector2.UP)
 
@@ -30,12 +31,12 @@ func anima(velocitat: Vector2):
 		
 		if velocitat.y < -1:
 			animacio.play('salta')
+			return 
 		
 		if abs(velocitat.x) < 0.5:
 			animacio.play('quiet')
 
-	
 
 
-func _on_Final_area_entered(area):
-	pass
+func _on_Final_body_entered(body):
+	get_tree().change_scene("res://joc godot/Escena2.tscn")

@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-var velocitat_base = 500
+var velocitat_base = 200
 var velocitat = Vector2.ZERO
 var gravetat = Vector2.DOWN * 980
-var salt = Vector2.UP * 500
+var salt = Vector2.UP * 500 
 
 func _physics_process(delta):
 	
@@ -15,10 +15,13 @@ func _physics_process(delta):
 		velocitat += Vector2.LEFT* velocitat_base
 	if Input.is_action_just_pressed("mou amunt") and is_on_floor():
 		velocitat += salt
-	
+	if Input.is_action_just_pressed("mou avall"):
+		velocitat += Vector2.DOWN * velocitat_base
 	velocitat += gravetat * delta
 	velocitat = move_and_slide(velocitat, Vector2.UP)
+	anima(velocitat)
 	
+
 func anima(velocitat: Vector2):
 		var animacio : AnimatedSprite = $AnimatedSprite
 		if velocitat.x > 0:
@@ -30,7 +33,8 @@ func anima(velocitat: Vector2):
 		
 		if velocitat.y < -1:
 			animacio.play('salta')
+			return 
 		
 		if abs(velocitat.x) < 0.5:
 			animacio.play('quiet')
-		
+

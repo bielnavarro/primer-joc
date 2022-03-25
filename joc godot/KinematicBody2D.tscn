@@ -7,14 +7,14 @@
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "salta",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "camina",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "salta",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ) ],
@@ -23,8 +23,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.5, 43.75 )
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 29.0
+height = 30.0
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
@@ -33,9 +34,10 @@ position = Vector2( 243.9, 89 )
 scale = Vector2( 0.642193, 0.609375 )
 frames = SubResource( 2 )
 animation = "camina"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2( 244.5, 122.25 )
-shape = SubResource( 1 )
+position = Vector2( 246, 123 )
+shape = SubResource( 3 )
