@@ -23,9 +23,8 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=3]
-radius = 29.0
-height = 30.0
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 25.25, 39.625 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
@@ -34,10 +33,9 @@ position = Vector2( 243.9, 89 )
 scale = Vector2( 0.642193, 0.609375 )
 frames = SubResource( 2 )
 animation = "camina"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2( 246, 123 )
+position = Vector2( 245.75, 122.375 )
 shape = SubResource( 3 )

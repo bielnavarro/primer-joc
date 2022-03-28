@@ -8,7 +8,7 @@ extents = Vector2( 270.75, 5 )
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = 105.0
 margin_top = 508.0
-margin_right = 648.0
+margin_right = 644.0
 margin_bottom = 519.0
 color = Color( 1, 0, 0.0666667, 1 )
 

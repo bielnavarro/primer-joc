@@ -40,3 +40,19 @@ func anima(velocitat: Vector2):
 
 func _on_Final_body_entered(body):
 	get_tree().change_scene("res://joc godot/Escena2.tscn")
+
+
+func _on_Terra_body_entered(body):
+	get_tree().change_scene("res://joc godot/EscenaCossos.tscn")
+
+
+func _on_Morir_body_entered(body):
+	get_tree().change_scene("res://joc godot/Escena2.tscn")
+
+
+func _on_Morir2_body_entered(body):
+	get_tree().change_scene("res://joc godot/Escena2.tscn")
+
+
+func _on_Area2D_body_entered(body):
+	get_tree().change_scene("res://joc godot/Escena2.tscn")
