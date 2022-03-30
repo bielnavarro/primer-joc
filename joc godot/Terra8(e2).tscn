@@ -10,7 +10,7 @@ margin_left = 502.0
 margin_top = 245.0
 margin_right = 563.0
 margin_bottom = 255.0
-color = Color( 1, 0.964706, 0, 1 )
+color = Color( 1, 0, 0.72549, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

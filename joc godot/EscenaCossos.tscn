@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://joc godot/Terra.tscn" type="PackedScene" id=1]
 [ext_resource path="res://joc godot/KinematicBody2D.tscn" type="PackedScene" id=2]
@@ -7,25 +7,32 @@
 [ext_resource path="res://joc godot/Terra 3.tscn" type="PackedScene" id=5]
 [ext_resource path="res://joc godot/Terra 4.tscn" type="PackedScene" id=6]
 [ext_resource path="res://joc godot/Terra 5.tscn" type="PackedScene" id=7]
-[ext_resource path="res://joc godot/keyBlue.png" type="Texture" id=8]
+[ext_resource path="res://joc godot/colored_land.png" type="Texture" id=8]
 [ext_resource path="res://joc godot/spikes.png" type="Texture" id=9]
 [ext_resource path="res://joc godot/Terra6.tscn" type="PackedScene" id=10]
-[ext_resource path="res://joc godot/colored_desert.png" type="Texture" id=11]
+[ext_resource path="res://joc godot/coinGold.png" type="Texture" id=11]
+[ext_resource path="res://joc godot/Terra 7.tscn" type="PackedScene" id=12]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 22.6875, 42.9375 )
+[sub_resource type="CircleShape2D" id=4]
+radius = 26.0768
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 775.5, 21 )
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 42.25, 8.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 8.5, 44 )
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Fons" type="Sprite" parent="."]
-position = Vector2( 540.5, 244.5 )
-scale = Vector2( 2.04395, 1.20605 )
-texture = ExtResource( 11 )
+position = Vector2( 718.999, 227.499 )
+scale = Vector2( 2.39258, 1.23926 )
+texture = ExtResource( 8 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( -182, 60 )
@@ -41,29 +48,32 @@ scale = Vector2( 0.5, 1 )
 
 [node name="Terra2" parent="." instance=ExtResource( 3 )]
 material = SubResource( 1 )
-position = Vector2( 193, 101 )
+position = Vector2( 233, 212 )
 scale = Vector2( 0.351, 1 )
 
 [node name="Terra 3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 384, 43 )
+position = Vector2( 561, -53 )
 scale = Vector2( 0.3, 1 )
 
 [node name="Terra 4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 824, 114 )
+position = Vector2( 976, -31 )
 scale = Vector2( 0.1, 1 )
 
 [node name="Terra 5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 202, 10 )
+position = Vector2( 386, 12 )
 
 [node name="Terra6" parent="." instance=ExtResource( 10 )]
 position = Vector2( -179, 251 )
+
+[node name="Terra 7" parent="." instance=ExtResource( 12 )]
+position = Vector2( 640, 365 )
 
 [node name="Final" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Final"]
 visible = false
-position = Vector2( 1124, 146 )
-shape = SubResource( 2 )
+position = Vector2( 1573, 166 )
+shape = SubResource( 4 )
 
 [node name="Terra" type="Area2D" parent="."]
 position = Vector2( 0, 58 )
@@ -73,11 +83,11 @@ visible = false
 position = Vector2( 641.5, 735 )
 shape = SubResource( 3 )
 
-[node name="Clau" type="Sprite" parent="."]
-position = Vector2( 1119, 158 )
+[node name="Moneda" type="Sprite" parent="."]
+position = Vector2( 1574, 166 )
 rotation = -1.5708
-scale = Vector2( 0.704706, 0.606276 )
-texture = ExtResource( 8 )
+scale = Vector2( 0.763233, 0.828682 )
+texture = ExtResource( 11 )
 
 [node name="Pinxos" type="Sprite" parent="."]
 position = Vector2( -25.5, 706 )
@@ -104,5 +114,34 @@ position = Vector2( 1258.22, 713.344 )
 scale = Vector2( 2.59033, 1.59912 )
 texture = ExtResource( 9 )
 
+[node name="Pinxos 6" type="Sprite" parent="."]
+position = Vector2( 1486, 144 )
+rotation = -1.5708
+scale = Vector2( 0.721258, 0.342583 )
+texture = ExtResource( 9 )
+
+[node name="Pinxos 7" type="Sprite" parent="."]
+position = Vector2( 1334, 147 )
+rotation = -1.5708
+scale = Vector2( 0.705541, 0.331674 )
+texture = ExtResource( 9 )
+
+[node name="Pinxos v1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinxos v1"]
+visible = false
+position = Vector2( 1252.5, 146.75 )
+rotation = -1.5708
+shape = SubResource( 5 )
+
+[node name="Pinxos v2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinxos v2"]
+visible = false
+position = Vector2( 1401.5, 145 )
+shape = SubResource( 6 )
+
 [connection signal="body_entered" from="Final" to="KinematicBody2D" method="_on_Final_body_entered"]
 [connection signal="body_entered" from="Terra" to="KinematicBody2D" method="_on_Terra_body_entered"]
+[connection signal="body_entered" from="Pinxos v1" to="KinematicBody2D" method="_on_Pinxos_v1_body_entered"]
+[connection signal="body_entered" from="Pinxos v2" to="KinematicBody2D" method="_on_Pinxos_v2_body_entered"]

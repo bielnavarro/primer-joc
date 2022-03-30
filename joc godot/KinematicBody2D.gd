@@ -56,3 +56,11 @@ func _on_Morir2_body_entered(body):
 
 func _on_Area2D_body_entered(body):
 	get_tree().change_scene("res://joc godot/Escena2.tscn")
+
+
+func _on_Pinxos_v1_body_entered(body):
+	get_tree().change_scene("res://joc godot/EscenaCossos.tscn")
+
+
+func _on_Pinxos_v2_body_entered(body):
+	get_tree().change_scene("res://joc godot/EscenaCossos.tscn")
