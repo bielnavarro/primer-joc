@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://joc godot/Terra1(escena2).tscn" type="PackedScene" id=1]
 [ext_resource path="res://joc godot/KinematicBody2D.tscn" type="PackedScene" id=2]
+[ext_resource path="res://joc godot/flagRed2.png" type="Texture" id=3]
 [ext_resource path="res://joc godot/Terra2(escena2).tscn" type="PackedScene" id=4]
 [ext_resource path="res://joc godot/Terra3(escena2).tscn" type="PackedScene" id=5]
 [ext_resource path="res://joc godot/KinematicBody2D.gd" type="Script" id=6]
@@ -12,28 +13,43 @@
 [ext_resource path="res://joc godot/spikes.png" type="Texture" id=11]
 [ext_resource path="res://joc godot/Terra 9(e2).tscn" type="PackedScene" id=12]
 [ext_resource path="res://joc godot/colored_land.png" type="Texture" id=13]
+[ext_resource path="res://joc godot/T10e2.tscn" type="PackedScene" id=14]
+[ext_resource path="res://joc godot/T12e2.tscn" type="PackedScene" id=18]
+[ext_resource path="res://joc godot/T11e2.tscn" type="PackedScene" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 13.5, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 60.5, 6.5 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 66.5, 8.5 )
+extents = Vector2( 57.5, 7.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 623.875, 9 )
+extents = Vector2( 270.438, 9 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 10.6875, 9 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 9.5, 7.5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 9, 9.5 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 8.875, 9.5 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 12, 11.5 )
 
 [node name="Escena2" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 695, 204 )
-scale = Vector2( 2.35352, 1.39453 )
+position = Vector2( 826, 381 )
+scale = Vector2( 2.38086, 1.63672 )
 texture = ExtResource( 13 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( -173, -64 )
+position = Vector2( -171, -72 )
 script = ExtResource( 6 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
@@ -56,53 +72,93 @@ position = Vector2( -87, 10 )
 position = Vector2( 722, 423 )
 
 [node name="Terra7(e2)" parent="." instance=ExtResource( 10 )]
-position = Vector2( -95, -45 )
+position = Vector2( -73, -40 )
 
 [node name="Terra8(e2)" parent="." instance=ExtResource( 8 )]
-position = Vector2( 193, -84 )
+position = Vector2( 193, -64 )
 
 [node name="Terra 9(e2)" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1194, 114 )
+
+[node name="T10" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1144, 112 )
+
+[node name="T11" parent="." instance=ExtResource( 20 )]
+position = Vector2( 1325, 117 )
+
+[node name="T12" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1133, 680 )
 
 [node name="Inici" type="Area2D" parent="."]
 position = Vector2( 79, 56 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inici"]
 visible = false
-position = Vector2( 3.5, 0 )
+position = Vector2( -8, 8 )
 shape = SubResource( 1 )
 
 [node name="Pinxos(e2)" type="Sprite" parent="."]
-position = Vector2( 1054, 71 )
-scale = Vector2( 1.10938, 0.421875 )
-texture = ExtResource( 11 )
-
-[node name="Pinxos2(e2)" type="Sprite" parent="."]
-position = Vector2( 1346, 71 )
-scale = Vector2( 1.16016, 0.398438 )
+position = Vector2( 1023, 71 )
+scale = Vector2( 1, 0.421875 )
 texture = ExtResource( 11 )
 
 [node name="Morir" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Morir"]
 visible = false
-position = Vector2( 1053.5, 88.5 )
+position = Vector2( 1024.5, 89.5 )
 shape = SubResource( 2 )
 
-[node name="Morir2" type="Area2D" parent="."]
+[node name="MorirTerra" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Morir2"]
-visible = false
-position = Vector2( 1344.5, 89.5 )
-shape = SubResource( 3 )
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-position = Vector2( 1192, 586 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MorirTerra"]
+position = Vector2( 851, 688 )
 shape = SubResource( 4 )
 
+[node name="Bandera" type="Sprite" parent="."]
+position = Vector2( 1254, 648 )
+scale = Vector2( 0.535157, 0.433594 )
+texture = ExtResource( 3 )
+
+[node name="Morir2e2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Morir2e2"]
+visible = false
+position = Vector2( 1173.31, 175 )
+shape = SubResource( 5 )
+
+[node name="Morir3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Morir3"]
+visible = false
+position = Vector2( 1280, 272 )
+shape = SubResource( 6 )
+
+[node name="Morir4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Morir4"]
+visible = false
+position = Vector2( 1300, 509 )
+shape = SubResource( 7 )
+
+[node name="Morir5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Morir5"]
+visible = false
+position = Vector2( 1315, 396 )
+shape = SubResource( 8 )
+
+[node name="Morir6" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Morir6"]
+visible = false
+position = Vector2( 1233, 513 )
+shape = SubResource( 9 )
+
 [connection signal="body_entered" from="Morir" to="KinematicBody2D" method="_on_Morir_body_entered"]
-[connection signal="body_entered" from="Morir2" to="KinematicBody2D" method="_on_Morir2_body_entered"]
-[connection signal="body_entered" from="Area2D" to="KinematicBody2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="MorirTerra" to="KinematicBody2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Morir2e2" to="KinematicBody2D" method="_on_Morir2e2_body_entered"]
+[connection signal="body_entered" from="Morir3" to="KinematicBody2D" method="_on_Morir3_body_entered"]
+[connection signal="body_entered" from="Morir4" to="KinematicBody2D" method="_on_Morir4_body_entered"]
+[connection signal="body_entered" from="Morir5" to="KinematicBody2D" method="_on_Morir5_body_entered"]
+[connection signal="body_entered" from="Morir6" to="KinematicBody2D" method="_on_Morir6_body_entered"]

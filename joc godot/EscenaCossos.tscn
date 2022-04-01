@@ -19,7 +19,7 @@
 radius = 26.0768
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 775.5, 21 )
+extents = Vector2( 1083.5, 19 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 42.25, 8.5 )
@@ -30,7 +30,7 @@ extents = Vector2( 8.5, 44 )
 [node name="Node2D" type="Node2D"]
 
 [node name="Fons" type="Sprite" parent="."]
-position = Vector2( 718.999, 227.499 )
+position = Vector2( 722.999, 227.499 )
 scale = Vector2( 2.39258, 1.23926 )
 texture = ExtResource( 8 )
 
@@ -52,11 +52,11 @@ position = Vector2( 233, 212 )
 scale = Vector2( 0.351, 1 )
 
 [node name="Terra 3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 561, -53 )
+position = Vector2( 600, 32 )
 scale = Vector2( 0.3, 1 )
 
 [node name="Terra 4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 976, -31 )
+position = Vector2( 1014, 62 )
 scale = Vector2( 0.1, 1 )
 
 [node name="Terra 5" parent="." instance=ExtResource( 7 )]
@@ -66,7 +66,7 @@ position = Vector2( 386, 12 )
 position = Vector2( -179, 251 )
 
 [node name="Terra 7" parent="." instance=ExtResource( 12 )]
-position = Vector2( 640, 365 )
+position = Vector2( 654, 364 )
 
 [node name="Final" type="Area2D" parent="."]
 
@@ -80,7 +80,7 @@ position = Vector2( 0, 58 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terra"]
 visible = false
-position = Vector2( 641.5, 735 )
+position = Vector2( 763.5, 733 )
 shape = SubResource( 3 )
 
 [node name="Moneda" type="Sprite" parent="."]
@@ -130,7 +130,7 @@ texture = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pinxos v1"]
 visible = false
-position = Vector2( 1252.5, 146.75 )
+position = Vector2( 1346, 147 )
 rotation = -1.5708
 shape = SubResource( 5 )
 
@@ -138,7 +138,7 @@ shape = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pinxos v2"]
 visible = false
-position = Vector2( 1401.5, 145 )
+position = Vector2( 1499, 146 )
 shape = SubResource( 6 )
 
 [connection signal="body_entered" from="Final" to="KinematicBody2D" method="_on_Final_body_entered"]
